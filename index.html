@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,181 +10,528 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      background: #050816;
-      color: white;
-      line-height: 1.6;
+      background: #050505;
+      color: #f5f5f5;
+      overflow-x: hidden;
     }
 
-    header {
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(130, 80, 255, 0.14), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(0, 255, 220, 0.08), transparent 35%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: 20px;
+      top: 20px;
+      bottom: 20px;
+      width: 230px;
+      padding: 25px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      backdrop-filter: blur(18px);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .small-text {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+
+    .nav a {
+      display: block;
+      color: #d8d8d8;
+      text-decoration: none;
+      padding: 12px 14px;
+      margin: 8px 0;
+      border-radius: 14px;
+      transition: 0.3s;
+      font-size: 15px;
+    }
+
+    .nav a:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: white;
+      box-shadow: 0 0 18px rgba(120, 90, 255, 0.18);
+    }
+
+    .main {
+      margin-left: 280px;
+      padding: 30px;
+    }
+
+    section {
       min-height: 100vh;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 30px;
-      background: radial-gradient(circle, #1d2b64, #050816);
+      padding: 60px 0;
     }
 
-    .hero h1 {
-      font-size: 42px;
-      color: #00e5ff;
+    .section-box {
+      width: 100%;
+      padding: 35px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 28px;
+      backdrop-filter: blur(18px);
+      transition: 0.3s;
     }
 
-    .hero h2 {
-      font-size: 22px;
-      margin: 10px 0;
-      color: #ddd;
+    .section-box:hover {
+      border-color: rgba(255, 255, 255, 0.22);
+      box-shadow: 0 0 28px rgba(255, 255, 255, 0.05);
     }
 
-    .hero p {
-      max-width: 700px;
-      margin: 15px auto;
+    h1 {
+      font-size: 56px;
+      line-height: 1.1;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 34px;
+      margin-bottom: 25px;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .title {
+      font-size: 21px;
       color: #cfcfcf;
+      margin-bottom: 22px;
+    }
+
+    .intro {
+      max-width: 850px;
+      color: #bdbdbd;
+      font-size: 17px;
+      margin-bottom: 25px;
+    }
+
+    .roles {
+      color: #e8e8e8;
+      line-height: 1.9;
+      margin-bottom: 30px;
     }
 
     .btn {
       display: inline-block;
-      margin: 10px;
-      padding: 12px 22px;
-      background: #00e5ff;
-      color: #050816;
+      margin-right: 12px;
+      margin-top: 10px;
+      padding: 12px 20px;
+      border-radius: 30px;
       text-decoration: none;
-      border-radius: 25px;
-      font-weight: bold;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.06);
+      transition: 0.3s;
     }
 
-    section {
-      padding: 60px 10%;
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px rgba(140, 110, 255, 0.25);
     }
 
-    h2.section-title {
-      color: #00e5ff;
-      margin-bottom: 25px;
-      font-size: 30px;
-      text-align: center;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
     }
 
     .card {
-      background: #10152f;
-      padding: 25px;
-      border-radius: 15px;
-      margin: 20px 0;
-      box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 22px;
+      min-height: 150px;
+      transition: 0.3s;
     }
 
-    .skills span {
-      display: inline-block;
-      background: #172554;
-      padding: 10px 16px;
-      margin: 8px;
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.24);
+      box-shadow: 0 0 22px rgba(255, 255, 255, 0.06);
+    }
+
+    .card p, li {
+      color: #bdbdbd;
+      line-height: 1.7;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      padding: 11px 16px;
       border-radius: 20px;
+      background: rgba(255, 255, 255, 0.065);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #eaeaea;
     }
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+    .flip-card {
+      perspective: 1000px;
+      min-height: 220px;
     }
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #030712;
-      color: #aaa;
+    .flip-inner {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      transition: transform 0.7s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-front, .flip-back {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      padding: 22px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .flip-back {
+      transform: rotateY(180deg);
     }
 
     a {
-      color: #00e5ff;
+      color: #d9d9ff;
+    }
+
+    .footer {
+      color: #888;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .sidebar {
+        position: relative;
+        width: auto;
+        left: auto;
+        top: auto;
+        bottom: auto;
+        margin: 15px;
+      }
+
+      .main {
+        margin-left: 0;
+        padding: 15px;
+      }
+
+      section {
+        min-height: auto;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <div class="hero">
-      <h1>Kannapu Devananda Reddy</h1>
-      <h2>B.Tech AI & ML Student | Developer</h2>
-      <p>
-        I am a passionate Artificial Intelligence and Machine Learning student
-        interested in building useful AI tools, web applications, and real-world projects.
-      </p>
-      <a href="#projects" class="btn">View Projects</a>
-      <a href="#contact" class="btn">Contact Me</a>
-    </div>
-  </header>
+  <aside class="sidebar">
+    <div class="logo">KDR</div>
+    <div class="small-text">Portfolio</div>
 
-  <section id="about">
-    <h2 class="section-title">About Me</h2>
-    <div class="card">
-      <p>
-        I am currently pursuing B.Tech in Artificial Intelligence and Machine Learning
-        at Kakatiya Institute of Technology & Science, Warangal. I enjoy learning
-        Python, web development, AI tools, and building practical student-focused projects.
-      </p>
-    </div>
-  </section>
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#internships">Internships</a>
+      <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </aside>
 
-  <section id="skills">
-    <h2 class="section-title">Skills</h2>
-    <div class="card skills">
-      <span>Python</span>
-      <span>Machine Learning</span>
-      <span>Artificial Intelligence</span>
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>React</span>
-      <span>GitHub</span>
-    </div>
-  </section>
+  <main class="main">
 
-  <section id="projects">
-    <h2 class="section-title">Projects</h2>
+    <section id="home">
+      <div class="section-box">
+        <h1>Kannapu Devananda Reddy</h1>
+        <p class="title">Artificial Intelligence & Machine Learning Student</p>
 
-    <div class="projects">
-      <div class="card">
-        <h3>Study Buddy AI</h3>
-        <p>
-          An AI-powered study assistant web app that helps students ask questions
-          and get quick learning support.
+        <p class="intro">
+          Passionate Artificial Intelligence and Machine Learning student with interest in
+          Data Science, Cloud Computing, and building practical AI-powered applications.
+          I enjoy learning new technologies and creating useful projects that solve real-world problems.
+        </p>
+
+        <div class="roles">
+          AI/ML Enthusiast <br>
+          Data Science Learner <br>
+          AI App Builder <br>
+          Cloud Computing Learner
+        </div>
+
+        <a class="btn" href="#projects">View Projects</a>
+        <a class="btn" href="#contact">Contact Me</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-box">
+        <h2>About Me</h2>
+        <p class="intro">
+          I am a student focused on Artificial Intelligence, Machine Learning, and Data Science.
+          I am currently building my skills in programming, web development, AI tools, and cloud technologies.
+          My goal is to create practical applications that support learning, productivity, and career growth.
         </p>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>AI Tutor App</h3>
-        <p>
-          A smart tutor chatbot project designed to answer academic questions
-          and support learning through AI.
-        </p>
+    <section id="education">
+      <div class="section-box">
+        <h2>Education</h2>
+
+        <div class="grid">
+          <div class="card">
+            <h3>B.Tech in Artificial Intelligence & Machine Learning</h3>
+            <p>Kakatiya Institute of Technology and Science, Warangal</p>
+            <p>2024 - Present</p>
+          </div>
+
+          <div class="card">
+            <h3>Diploma Level - Data Science Program</h3>
+            <p>Indian Institute of Technology Madras - Online Program</p>
+            <p>September 2025 - Present</p>
+          </div>
+
+          <div class="card">
+            <h3>Intermediate - MPC</h3>
+            <p>Narayana Junior College</p>
+            <p>2022 - 2024</p>
+          </div>
+
+          <div class="card">
+            <h3>Secondary School Education</h3>
+            <p>Narayana Concept School</p>
+            <p>Completed 2022</p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>Portfolio Website</h3>
-        <p>
-          A personal portfolio website built using HTML and CSS to showcase my
-          skills, projects, and contact details.
-        </p>
+    <section id="skills">
+      <div class="section-box">
+        <h2>Skills</h2>
+
+        <div class="skills-list">
+          <span class="skill">Python</span>
+          <span class="skill">C</span>
+          <span class="skill">Java</span>
+          <span class="skill">AI Tools</span>
+          <span class="skill">Basic SQL</span>
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">React</span>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <div class="card">
-      <p>Email: <a href="mailto:kdevanandareddy@gmail.com">kdevanandareddy@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/Deva-6" target="_blank">github.com/Deva-6</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/devanandareddykannapu" target="_blank">linkedin.com/in/devanandareddykannapu</a></p>
-    </div>
-  </section>
+    <section id="certifications">
+      <div class="section-box">
+        <h2>Certifications</h2>
 
-  <footer>
-    <p>© 2026 Kannapu Devananda Reddy. All Rights Reserved.</p>
-  </footer>
+        <div class="grid">
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <h3>Google Cloud Computing Foundations</h3>
+                <p>Google</p>
+              </div>
+              <div class="flip-back">
+                <h3>Details</h3>
+                <p>Issued September 2025. Covers foundational cloud computing concepts and Google Cloud services.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <h3>CS50 Introduction to Programming with Python</h3>
+                <p>CS50</p>
+              </div>
+              <div class="flip-back">
+                <h3>Details</h3>
+                <p>Programming fundamentals using Python, problem solving, functions, files, and core programming concepts.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <h3>Oracle Data Platform 2025 Certified Foundations Associate</h3>
+                <p>Oracle</p>
+              </div>
+              <div class="flip-back">
+                <h3>Details</h3>
+                <p>Foundation-level certification related to data platforms, databases, and modern data technology concepts.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="internships">
+      <div class="section-box">
+        <h2>Internships</h2>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Full Stack Web Development Intern</h3>
+            <p>Pantech eLearning</p>
+            <p>Issued July 2025</p>
+            <p>Credential ID: PEL-SI-2025-4443</p>
+          </div>
+
+          <div class="card">
+            <h3>Machine Learning with Python Intern</h3>
+            <p>Mindenious</p>
+            <p>2-month internship program focused on Machine Learning with Python.</p>
+            <p>Certificate ID: MIND-TRN-506</p>
+          </div>
+
+          <div class="card">
+            <h3>AI & Prompt Engineering Intern</h3>
+            <p>VaultofCodes</p>
+            <p>1-month internship focused on AI tools, prompt engineering, and practical AI use cases.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-box">
+        <h2>Projects</h2>
+
+        <div class="grid">
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <h3>PrepMate AI</h3>
+                <p>Study Buddy + Interview Buddy</p>
+              </div>
+              <div class="flip-back">
+                <h3>About Project</h3>
+                <p>
+                  A web app where students can learn concepts and practice real-time interviews.
+                  It is designed to help users prepare for interviews with AI-powered support.
+                </p>
+                <br>
+                <a href="https://prepmate-ai-oism.onrender.com" target="_blank">Live Demo</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>
+              A personal portfolio website built to showcase education, skills, certifications,
+              internships, projects, and contact details.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="section-box">
+        <h2>Achievements & Activities</h2>
+
+        <div class="grid">
+          <div class="card">
+            <h3>130+ LeetCode Problems</h3>
+            <p>Solved 130+ problems covering Data Structures and Algorithms.</p>
+          </div>
+
+          <div class="card">
+            <h3>XR, AR & VR Workshop</h3>
+            <p>Participated in a 2-Day XR, AR and VR Workshop conducted by XR-Monk at NIT Warangal.</p>
+          </div>
+
+          <div class="card">
+            <h3>Ethical Hacking Workshop</h3>
+            <p>Participated in an Ethical Hacking Workshop at Kakatiya Institute of Technology and Science, Warangal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-box">
+        <h2>Contact</h2>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Email</h3>
+            <p><a href="mailto:kdevanandareddy@gmail.com">kdevanandareddy@gmail.com</a></p>
+          </div>
+
+          <div class="card">
+            <h3>GitHub</h3>
+            <p><a href="https://github.com/Deva-6" target="_blank">github.com/Deva-6</a></p>
+          </div>
+
+          <div class="card">
+            <h3>LinkedIn</h3>
+            <p><a href="https://www.linkedin.com/in/devanandareddykannapu" target="_blank">linkedin.com/in/devanandareddykannapu</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      © 2026 Kannapu Devananda Reddy
+    </div>
+
+  </main>
 
 </body>
 </html>
