@@ -4,50 +4,118 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kannapu Devananda Reddy | Portfolio</title>
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 html{scroll-behavior:smooth}
 body{background:#050505;color:#fff}
+
 nav{position:sticky;top:0;background:#050505cc;backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;padding:22px 8%;border-bottom:1px solid #222;z-index:10}
 .logo{font-weight:bold;font-size:24px}
 nav a{color:#fff;text-decoration:none;margin-left:28px;font-size:14px}
 nav a:hover{color:#7dd3fc}
+
 section{padding:80px 8%;border-bottom:1px solid #202020}
 .hero{min-height:88vh;display:flex;align-items:center;justify-content:space-between;gap:50px}
 .hero h1{font-size:58px;line-height:1.1;margin:15px 0}
 .hero h1 span{color:#7dd3fc}
 .hero h2{font-size:22px;font-weight:400;margin-bottom:22px}
 .hero p,.text{color:#cfcfcf;line-height:1.7;max-width:760px}
+
 .roles{margin-top:28px;display:grid;grid-template-columns:repeat(4,1fr);gap:25px;text-align:center}
 .role{color:#ddd}
 .icon{font-size:34px;margin-bottom:8px}
 .hero-art{font-size:130px;opacity:.9}
+
 h3.section-title{font-size:26px;margin-bottom:35px;color:#fff}
 .row{display:grid;grid-template-columns:220px 1fr;gap:35px;align-items:start}
 .left-title{color:#7dd3fc;font-weight:bold;font-size:18px;text-transform:uppercase}
+
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px}
 .item{padding:5px 0}
 .item h4{font-size:18px;margin-bottom:8px}
 .item p{color:#cfcfcf;line-height:1.6;font-size:15px}
+
 .skills{display:flex;flex-wrap:wrap;gap:30px}
 .skill{text-align:center;min-width:90px;color:#e5e5e5}
-.project{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center}
-.project-img{height:230px;border:1px solid #333;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:60px;background:#0b0b0b}
+
+/* FIXED PROJECT SECTION */
+.projects-list{
+  display:flex;
+  flex-direction:column;
+  gap:75px;
+  width:100%;
+}
+
+.project{
+  display:grid;
+  grid-template-columns:260px minmax(0,1fr);
+  gap:55px;
+  align-items:center;
+  width:100%;
+}
+
+.project-img{
+  width:260px;
+  height:230px;
+  border:1px solid #333;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:60px;
+  background:#0b0b0b;
+}
+
+.project-content{
+  max-width:700px;
+}
+
+.project-content h4{
+  font-size:26px;
+  margin-bottom:12px;
+}
+
+.project-content .text{
+  max-width:700px;
+  line-height:1.8;
+}
+
+.project-links{
+  margin-top:22px;
+  display:flex;
+  gap:24px;
+  flex-wrap:wrap;
+}
+
 a{color:#7dd3fc}
+
 .contact{display:flex;flex-wrap:wrap;gap:35px}
 footer{text-align:center;padding:25px;color:#888}
+
 @media(max-width:900px){
-nav{display:block;text-align:center}
-nav div:last-child{margin-top:15px}
-nav a{display:inline-block;margin:8px}
-.hero,.project{grid-template-columns:1fr;display:block}
-.hero h1{font-size:40px}
-.hero-art{display:none}
-.roles{grid-template-columns:repeat(2,1fr)}
-.row{grid-template-columns:1fr}
+  nav{display:block;text-align:center}
+  nav div:last-child{margin-top:15px}
+  nav a{display:inline-block;margin:8px}
+  .hero{display:block}
+  .hero h1{font-size:40px}
+  .hero-art{display:none}
+  .roles{grid-template-columns:repeat(2,1fr)}
+  .row{grid-template-columns:1fr}
+
+  .project{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  .project-img{
+    width:100%;
+    max-width:320px;
+  }
 }
 </style>
 </head>
+
 <body>
 
 <nav>
@@ -81,6 +149,7 @@ nav a{display:inline-block;margin:8px}
       <div class="role"><div class="icon">☁️</div>Cloud Computing Learner</div>
     </div>
   </div>
+
   <div class="hero-art">⚡</div>
 </section>
 
@@ -98,11 +167,27 @@ nav a{display:inline-block;margin:8px}
 <section id="education">
   <div class="row">
     <div class="left-title">Education</div>
+
     <div class="grid">
-      <div class="item"><h4>B.Tech in AI & ML</h4><p>Kakatiya Institute of Technology and Science, Warangal<br>2024 - Present</p></div>
-      <div class="item"><h4>Diploma Level - Data Science</h4><p>IIT Madras Online Program<br>Sep 2025 - Present</p></div>
-      <div class="item"><h4>Intermediate - MPC</h4><p>Narayana Junior College<br>2022 - 2024</p></div>
-      <div class="item"><h4>Secondary School</h4><p>Narayana Concept School<br>Completed 2022</p></div>
+      <div class="item">
+        <h4>B.Tech in AI & ML</h4>
+        <p>Kakatiya Institute of Technology and Science, Warangal<br>2024 - Present</p>
+      </div>
+
+      <div class="item">
+        <h4>Diploma Level - Data Science</h4>
+        <p>IIT Madras Online Program<br>Sep 2025 - Present</p>
+      </div>
+
+      <div class="item">
+        <h4>Intermediate - MPC</h4>
+        <p>Narayana Junior College<br>2022 - 2024</p>
+      </div>
+
+      <div class="item">
+        <h4>Secondary School</h4>
+        <p>Narayana Concept School<br>Completed 2022</p>
+      </div>
     </div>
   </div>
 </section>
@@ -110,6 +195,7 @@ nav a{display:inline-block;margin:8px}
 <section id="skills">
   <div class="row">
     <div class="left-title">Skills</div>
+
     <div class="skills">
       <div class="skill">🐍<br>Python</div>
       <div class="skill">💻<br>C</div>
@@ -127,10 +213,22 @@ nav a{display:inline-block;margin:8px}
 <section id="certifications">
   <div class="row">
     <div class="left-title">Certifications</div>
+
     <div class="grid">
-      <div class="item"><h4>Google Cloud Computing Foundations</h4><p>Google<br>Issued Sep 2025</p></div>
-      <div class="item"><h4>CS50 Introduction to Programming with Python</h4><p>CS50</p></div>
-      <div class="item"><h4>Oracle Data Platform 2025 Certified Foundations Associate</h4><p>Oracle</p></div>
+      <div class="item">
+        <h4>Google Cloud Computing Foundations</h4>
+        <p>Google<br>Issued Sep 2025</p>
+      </div>
+
+      <div class="item">
+        <h4>CS50 Introduction to Programming with Python</h4>
+        <p>CS50</p>
+      </div>
+
+      <div class="item">
+        <h4>Oracle Data Platform 2025 Certified Foundations Associate</h4>
+        <p>Oracle</p>
+      </div>
     </div>
   </div>
 </section>
@@ -138,10 +236,22 @@ nav a{display:inline-block;margin:8px}
 <section id="internships">
   <div class="row">
     <div class="left-title">Internships</div>
+
     <div class="grid">
-      <div class="item"><h4>Full Stack Web Development Intern</h4><p>Pantech eLearning<br>Credential ID: PEL-SI-2025-4443</p></div>
-      <div class="item"><h4>Machine Learning with Python Intern</h4><p>Mindenious<br>2-month internship<br>Certificate ID: MIND-TRN-506</p></div>
-      <div class="item"><h4>AI & Prompt Engineering Intern</h4><p>VaultofCodes<br>1-month internship</p></div>
+      <div class="item">
+        <h4>Full Stack Web Development Intern</h4>
+        <p>Pantech eLearning<br>Credential ID: PEL-SI-2025-4443</p>
+      </div>
+
+      <div class="item">
+        <h4>Machine Learning with Python Intern</h4>
+        <p>Mindenious<br>2-month internship<br>Certificate ID: MIND-TRN-506</p>
+      </div>
+
+      <div class="item">
+        <h4>AI & Prompt Engineering Intern</h4>
+        <p>VaultofCodes<br>1-month internship</p>
+      </div>
     </div>
   </div>
 </section>
@@ -149,43 +259,55 @@ nav a{display:inline-block;margin:8px}
 <section id="projects">
   <div class="row">
     <div class="left-title">Projects</div>
-    <!-- PrepMate AI -->
-    <div class="project">
-      <div class="project-img">🚀</div>
-      <div>
-        <h4 style="font-size:26px;">PrepMate AI</h4>
-        <p class="text">
-          AI-powered Study Buddy and Interview Buddy web application that helps students
-          learn concepts, revise topics, and practice real-time interview questions.
-          Designed to support effective learning and interview preparation through an
-          interactive and user-friendly experience.
-        </p>
-        <br>
-        <a href="https://prepmate-ai-oism.onrender.com" target="_blank">
-          Live Demo ↗
-        </a>
+
+    <div class="projects-list">
+
+      <div class="project">
+        <div class="project-img">🚀</div>
+
+        <div class="project-content">
+          <h4>PrepMate AI</h4>
+
+          <p class="text">
+            AI-powered Study Buddy and Interview Buddy web application that helps students
+            learn concepts, revise topics, and practice real-time interview questions.
+            Designed to support effective learning and interview preparation through an
+            interactive and user-friendly experience.
+          </p>
+
+          <div class="project-links">
+            <a href="https://prepmate-ai-oism.onrender.com" target="_blank">
+              Live Demo ↗
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
-    <!-- SkyCast -->
-    <div class="project">
-      <div class="project-img">🌦️</div>
-      <div>
-        <h4 style="font-size:26px;">SkyCast</h4>
-        <p class="text">
-          Machine learning-based weather forecasting dashboard that provides real-time
-          weather insights, predictive analytics, and interactive visualizations.
-          Features city search, location-based forecasting, hourly and daily weather
-          predictions, and comprehensive weather analytics.
-        </p>
-        <br>
-        <a href="https://skycast-yt63.onrender.com" target="_blank">
-          Live Demo ↗
-        </a>
-        <br><br>
-        <a href="https://github.com/Deva-6/skycast" target="_blank">
-          GitHub Repository ↗
-        </a>
+
+      <div class="project">
+        <div class="project-img">🌦️</div>
+
+        <div class="project-content">
+          <h4>SkyCast</h4>
+
+          <p class="text">
+            Machine learning-based weather forecasting dashboard that provides real-time
+            weather insights, predictive analytics, and interactive visualizations.
+            Features city search, location-based forecasting, hourly and daily weather
+            predictions, and comprehensive weather analytics.
+          </p>
+
+          <div class="project-links">
+            <a href="https://skycast-yt63.onrender.com" target="_blank">
+              Live Demo ↗
+            </a>
+
+            <a href="https://github.com/Deva-6/skycast" target="_blank">
+              GitHub Repository ↗
+            </a>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -193,10 +315,22 @@ nav a{display:inline-block;margin:8px}
 <section id="achievements">
   <div class="row">
     <div class="left-title">Achievements</div>
+
     <div class="grid">
-      <div class="item"><h4>130+ LeetCode Problems</h4><p>Solved DSA problems for coding practice.</p></div>
-      <div class="item"><h4>XR, AR & VR Workshop</h4><p>2-Day workshop by XR-Monk at NIT Warangal.</p></div>
-      <div class="item"><h4>Ethical Hacking Workshop</h4><p>Participated at KITS Warangal.</p></div>
+      <div class="item">
+        <h4>130+ LeetCode Problems</h4>
+        <p>Solved DSA problems for coding practice.</p>
+      </div>
+
+      <div class="item">
+        <h4>XR, AR & VR Workshop</h4>
+        <p>2-Day workshop by XR-Monk at NIT Warangal.</p>
+      </div>
+
+      <div class="item">
+        <h4>Ethical Hacking Workshop</h4>
+        <p>Participated at KITS Warangal.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -204,6 +338,7 @@ nav a{display:inline-block;margin:8px}
 <section id="contact">
   <div class="row">
     <div class="left-title">Contact</div>
+
     <div class="contact">
       <p>📧 <a href="mailto:kdevanandareddy@gmail.com">kdevanandareddy@gmail.com</a></p>
       <p>💻 <a href="https://github.com/Deva-6" target="_blank">github.com/Deva-6</a></p>
